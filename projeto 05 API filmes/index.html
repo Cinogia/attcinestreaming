@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cinegia Streaming</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="imagens/logo.png" type="image/png">
+  <script defer src="java/script.js"></script>
+
+  <!-- Estilo para rolagem suave -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho da página -->
+  <header>
+    <img src="imagens/iconb.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#filmes-em-alta">Catálogo</a>
+      <a href="#planos">Planos</a>
+    </nav>
+    <div class="header-right">
+      <input type="text" id="search-input" placeholder="Buscar..." />
+      <img src="imagens/iconperfil.png" alt="Perfil" class="perfil" />
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção: Filmes em alta -->
+    <section id="filmes-em-alta">
+      <h2>Em Alta</h2>
+      <div class="carrossel-container">
+        <button class="btn-carrossel" onclick="scrollCarrossel('carrossel-trending', -1)">&#10094;</button>
+        <div id="carrossel-trending" class="carrossel"></div>
+        <button class="btn-carrossel" onclick="scrollCarrossel('carrossel-trending', 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Seção: Filmes recomendados -->
+    <section id="filmes-populares">
+      <h2>Talvez você também goste</h2>
+      <div class="carrossel-container">
+        <button class="btn-carrossel" onclick="scrollCarrossel('carrossel-goste', -1)">&#10094;</button>
+        <div id="carrossel-goste" class="carrossel"></div>
+        <button class="btn-carrossel" onclick="scrollCarrossel('carrossel-goste', 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Seção: Detalhes do filme (mostrada ao clicar em um card) -->
+    <section id="detalhes-filme" class="hidden">
+      <div class="detalhes-banner" id="banner-filme">
+        <div class="overlay">
+          <h1 id="titulo-filme"></h1>
+        </div>
+      </div>
+      <div class="detalhes-info">
+        <p id="info-basica"></p>
+        <p id="descricao"></p>
+        <p><strong>Elenco:</strong> <span id="elenco"></span></p>
+        <p><strong>Criação:</strong> <span id="criador"></span></p>
+        <button class="btn-voltar" onclick="voltar()">&larr; Voltar</button>
+        <div id="trailer-container" class="hidden">
+          <iframe id="trailer-video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Planos de assinatura -->
+    <section id="planos">
+      <h2>Escolha seu Plano</h2>
+      <div class="planos-container">
+        <!-- Plano 1 -->
+        <div class="plano-card plano-roxo">
+          <h3>Padrão com Anúncios</h3>
+          <h4>1080p</h4>
+          <ul>
+            <li>1 tela</li>
+            <li>Qualidade de vídeo SD</li>
+            <li>Menos anúncios</li>
+            <li>Catálogo limitado</li>
+          </ul>
+          <p class="preco">R$20,90/mês</p>
+          <button class="btn-assinar">Assinar</button>
+        </div>
+
+        <!-- Plano 2 (Destaque) -->
+        <div class="plano-card destaque plano-azulado">
+          <h3>Padrão</h3>
+          <h4>2k</h4>
+          <ul>
+            <li>2 telas</li>
+            <li>Qualidade de vídeo HD</li>
+            <li>Catálogo completo</li>
+            <li>Sem anúncios</li>
+          </ul>
+          <p class="preco">R$44,90/mês</p>
+          <button class="btn-assinar">Assinar</button>
+        </div>
+
+        <!-- Plano 3 -->
+        <div class="plano-card plano-vermelho">
+          <h3>Premium</h3>
+          <h4>4k + HDR</h4>
+          <ul>
+            <li>4 telas</li>
+            <li>Qualidade de vídeo 4K</li>
+            <li>Catálogo completo + lançamentos</li>
+            <li>Sem anúncios</li>
+          </ul>
+          <p class="preco">R$59,90/mês</p>
+          <button class="btn-assinar">Assinar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé com atribuições -->
+  <footer>
+    <div class="atribuicoes"></div>
+    <p class="att"><b class="att1">Uma atividade de DDM2</b><br>Por: Danielly, Fernando, Isabella e Julia - G06</p>
+    <br><br>
+    <p class="info"><b class="info1">3ºInfo Web</b><br>Profs: Luciano e Wagner</p>
+  </footer>
+</body>
+</html>
